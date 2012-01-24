@@ -5,14 +5,14 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 
-public class Loading implements Runnable{
-	private static ArrayList<CarInfo> cars = new ArrayList<CarInfo>();
-	public Loading(){}
-	public ArrayList<CarInfo> getCarArray()
-	{
-		return cars;
-	}
-	public void run() {
+import android.app.Dialog;
+import android.os.AsyncTask;
+
+public class Task extends AsyncTask<Void, Void, ArrayList<CarInfo>>{
+
+	@Override
+	protected ArrayList<CarInfo> doInBackground(Void... params) {
+		ArrayList<CarInfo> cars = new ArrayList<CarInfo>();
 		Query q = null;
         try {
         	q = new Query();
@@ -30,5 +30,6 @@ public class Loading implements Runnable{
 				e.printStackTrace();
 			}
         }
+		return cars;
 	}
 }

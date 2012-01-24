@@ -18,7 +18,6 @@ public class MyAdapter extends ArrayAdapter<Object>{
 		super(context, R.layout.querying, objects.toArray());
 		this.context = context;
 		this.objects = objects;
-		// TODO Auto-generated constructor stub
 	}
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context
@@ -26,6 +25,7 @@ public class MyAdapter extends ArrayAdapter<Object>{
 		
 		View rowView = inflater.inflate(R.layout.querying, parent, false);
 		// viewHolder
+		rowView.setTag(objects.get(position).getId());
 		TextView textView = (TextView) rowView.findViewById(R.id.textView1);
 		TextView textView2 = (TextView) rowView.findViewById(R.id.textView2);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView1);

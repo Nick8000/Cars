@@ -23,12 +23,12 @@ public class ImageDownloader {
 	{
 		HttpURLConnection conn;
 		try {
+
 			conn = (HttpURLConnection)url.openConnection();
-		
-		conn.setDoInput(true);
-		conn.connect();
-		InputStream is = conn.getInputStream();
-		image = BitmapFactory.decodeStream(is);
+			conn.setDoInput(true);
+			conn.connect();
+			InputStream is = conn.getInputStream();
+			image = BitmapFactory.decodeStream(is);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

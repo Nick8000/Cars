@@ -1,26 +1,24 @@
 package com.hometask;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class LoadingActivity extends Activity{
-	private static ArrayList<CarInfo> cars = new ArrayList<CarInfo>();
+public class LoadingActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.loading);
-	    Loading l = new Loading();
-	    Thread t = new Thread(l);
-	    t.start();
-	    while(t.isAlive())
-	    	continue;
-	    cars = l.getCarArray();
-	    finish();
+	    setContentView(R.layout.welcome);
+	   	    
+	    Button but = (Button)findViewById(R.id.button1);
+	    but.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				finish();
+			}
+		});
 	}
-	public ArrayList<CarInfo> getCarArray()
-	{
-		return cars;
-	} 
 }
