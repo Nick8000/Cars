@@ -33,17 +33,12 @@ public class CarsActivity extends Activity {
 			
 			@Override
 			public boolean onKey(View arg0, int arg1, KeyEvent arg2) {
-				String h = txt.getText().toString();
-				if(h.length() > 0)
-					h = h.toUpperCase();
-				txt.setText(h);
-				list.setFilterText(h);
+				list.setFilterText("maz");
 				return false;
 			}
 		});
         
-	    Intent intent = new Intent(this, com.hometask.LoadingActivity.class/*load.getClass()*/);
-	    startActivity(intent);
+	    
 	    
         Task task = new Task();
         task.execute(null);
@@ -59,7 +54,7 @@ public class CarsActivity extends Activity {
 		}
 		
 		final ArrayList<CarInfo> cars;
-		if(false) // show each 5 ids false will changed when the settings will work
+		if(false) // show each 5 ids, false will changed when the settings will work
 			cars = eachFiveIds(Sort(carsUnsorted));
 		else
 			cars = Sort(carsUnsorted);

@@ -5,11 +5,14 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 
-import android.app.Dialog;
 import android.os.AsyncTask;
 
 public class Task extends AsyncTask<Void, Void, ArrayList<CarInfo>>{
 
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+	}
 	@Override
 	protected ArrayList<CarInfo> doInBackground(Void... params) {
 		ArrayList<CarInfo> cars = new ArrayList<CarInfo>();
@@ -32,4 +35,5 @@ public class Task extends AsyncTask<Void, Void, ArrayList<CarInfo>>{
         }
 		return cars;
 	}
+	
 }
